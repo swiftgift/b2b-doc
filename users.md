@@ -15,7 +15,7 @@ POST /api/v1/users
 }
 ```
 
-If you send request w/o `Authorization` HTTP header with auth token, user will
+If you send request w/o `Authorization` HTTP header with access token, user will
 be created with a new company and he will become it's owner. You can add a
 company section to request in order to specify company's parameters:
 ```json
@@ -27,13 +27,13 @@ POST /api/v1/users
   "company": {
     "name": "Roga & Kopyta",
     "url": "http://rogakopyta.co.uk",
-    "logo_url": "https://www.google.com/logos/doodles/2015/42nd-anniversary-of-the-official-recognition-of-the-letter-5644871192805376.2-hp2x.gif",
+    "logo_url": "//www.google.com/logos/doodles/2015/42nd-anniversary-of-the-official-recognition-of-the-letter-5644871192805376.2-hp2x.gif",
     "landing_domain": "rk.swiftgift.me"
   }
 }
 ```
 
-Response (w/o company in request):
+Response (for request w/o company in request):
 ```json
 {
   "id": 2,
@@ -49,10 +49,15 @@ Response (w/o company in request):
     "landing_domain": null,
     "client_id": "chaXxKnsZJ"
   },
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOjIsImV4cCI6MzMwNTM0Nzc5NTcsInZlciI6MSwiaWF0IjoxNTE3NDc3OTU3fQ.1eAux7FuOyFJxfDnuC6WrARToR_eTAT1jdWsHfJa-Vc" }
+  "access_token": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOjEsImV4cCI6MzMwNTIzNjYxMDQsInZlciI6MSwiaWF0IjoxNTE2MzY2MTA0fQ.M6vNPa9yG19ez3xrej4MBk9slmhjYqlBJcbC8RkcQcM",
+    "token_type": "bearer",
+    "expires_in": 3600,
+  }
+}
 ```
 
-Use `token` from request to [authenticate](./authentication.md) all other
+Use `access_token` from request to [authenticate](./authentication.md) all other
 requests to API.
 
 ### Log user in
@@ -83,8 +88,13 @@ Response:
     "landing_domain": "rk.swiftgift.me",
     "client_id": "chaXxKnsZJ"
   },
-  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOjIsImV4cCI6MzMwNTM0Nzc5NTcsInZlciI6MSwiaWF0IjoxNTE3NDc3OTU3fQ.1eAux7FuOyFJxfDnuC6WrARToR_eTAT1jdWsHfJa-Vc" }
+  "access_token": {
+    "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOjEsImV4cCI6MzMwNTIzNjYxMDQsInZlciI6MSwiaWF0IjoxNTE2MzY2MTA0fQ.M6vNPa9yG19ez3xrej4MBk9slmhjYqlBJcbC8RkcQcM",
+    "token_type": "bearer",
+    "expires_in": 3600,
+  }
+}
 ```
 
-Use `token` from request to [authenticate](./authentication.md) all other
+Use `access_token` from request to [authenticate](./authentication.md) all other
 requests to API.
