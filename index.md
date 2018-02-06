@@ -1,7 +1,7 @@
 ## SwiftGift B2B gifting API
 
   * Rest API
-    * [Authentication](./gifts.md)
+    * [Authentication](./authentication.md)
     * [Users](./users.md)
     * [Gifts](./gifts.md)
     * [Statistics](./stat.md)
