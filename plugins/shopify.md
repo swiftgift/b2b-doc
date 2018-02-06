@@ -2,8 +2,6 @@
 
 This plugin allows your customers to send any items purchased in your store as a gift, to their friends. Plugin modifies checkout pages by adding a gift option.
 
-**TODO**: improve description of our product, add more marketing bullshit.
-
 **TODO**: add screenshots of modified checkout pages.
 
 ### Integration
