@@ -2,9 +2,9 @@
 
 ### By access token
 
-The most of private API resources require passing OAuth2-style access token in `Authorization` HTTP header with `Bearer ` prefix, for example:
+The most of API resources require passing OAuth2-style access token in `Authorization` HTTP header with `Bearer ` prefix, for example:
 ```
-POST /api/v1/gifts
+POST /v1/gifts
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOjEsImV4cCI6MzMwNTIzNjYxMDQsInZlciI6MSwiaWF0IjoxNTE2MzY2MTA0fQ.M6vNPa9yG19ez3xrej4MBk9slmhjYqlBJcbC8RkcQcM
 {
   ...

@@ -91,7 +91,7 @@ Response (example: where gift has been accepted):
   "status": "accepted",
   "delivery_address": {
     "country": "Great Britain",
-    "state": "", // Optional for US
+    "state": "",
     "city": "London",
     "postcode": "NW1 6XE",
     "street_address1": "Baker Street",
