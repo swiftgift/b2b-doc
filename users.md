@@ -5,10 +5,8 @@
 The only required parameters to create a user are email and password. But other
 parameters such as `first_name`, `last_name` and `role` (if you create a new
 user into existent company) are also supported.
-Request:
+Request: `POST /v1/users`
 ```json
-POST /api/v1/users
-
 {
   "email": "killa@gorilla.com",
   "password": "topsecret"
@@ -17,10 +15,8 @@ POST /api/v1/users
 
 If you send request w/o `Authorization` HTTP header with access token, user will
 be created with a new company and he will become it's owner. You can add a
-company section to request in order to specify company's parameters:
+company section to request in order to specify company's parameters: `POST /v1/users`
 ```json
-POST /api/v1/users
-
 {
   "email": "killa@gorilla.com",
   "password": "topsecret",
@@ -62,10 +58,8 @@ requests to API.
 
 ### Log user in
 
-Request:
+Request: `POST /v1/users/login`
 ```json
-POST /api/v1/users/login
-
 {
   "email": "killa@gorilla.com",
   "password": "topsecret"
