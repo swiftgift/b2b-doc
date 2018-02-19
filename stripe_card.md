@@ -1,13 +1,12 @@
 ## Stripe cards API
 
-All Stripe cards' resources requires authentication by passing Oauth2 [access
-token](./authentication.md).
+This API resource requires authentication by [access token](./authentication.md).
 
 ### Store a new card
 
 Request:
 ```json
-POST /api/v1/stripe_card
+POST /v1/stripe_card
 {
   "token": "<Stripe source token obtained via Stripe.js>"
 }
@@ -44,5 +43,5 @@ Response:
 
 ### Delete card
 
-Request: `DELETE /api/v1/stripe_card`
+Request: `DELETE /v1/stripe_card`
 Successful response has 204 HTTP status code and empty body.
