@@ -4,9 +4,13 @@ This API resource requires authentication by [access token](./authentication.md)
 
 ### Store a new card
 
-Request:
+Allows to store user's card to pay for service automatically at the end of each
+month (billing period). Payments are provided by [Stripe](https://stripe.com/),
+so you can use [Stripe.js](https://stripe.com/docs/stripe-js/reference) or
+another client library to obtain card's source token.
+
+Request: `POST /v1/stripe_card`
 ```json
-POST /v1/stripe_card
 {
   "token": "<Stripe source token obtained via Stripe.js>"
 }
@@ -41,7 +45,7 @@ Response:
 }
 ```
 
-### Delete card
+### Delete a current card
 
 Request: `DELETE /v1/stripe_card`
 Successful response has 204 HTTP status code and empty body.
