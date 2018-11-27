@@ -5,7 +5,6 @@ When your user wants to send order as a gift, you create a new gift via our API.
 
 Request: `POST https://api.swiftgift.me/v1/gifts`
 ```json
-
 {
   "idempotency_key": "8557f5f0-f858-410a-a75e-68e2a008c84a",
   "sender": {
@@ -74,16 +73,10 @@ After acceptance, Recipient has capability to attach a “Thank You” message (
 After sender shares URL, we wait for recipient’s decision (with capability to send reminders to the sender).
 If Recipient opens or accepts the gift, your API will be called back with changes.
 
-```sh
-curl -H'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOjEsImV4cCI6MzMwNTIzNjYxMDQsInZlciI6MSwiaWF0IjoxNTE2MzY2MTA0fQ.M6vNPa9yG19ez3xrej4MBk9slmhjYqlBJcbC8RkcQcM' \
-  -d'{"idempotency_key": "123", "sender": {"first_name": "Sherlock", "last_name": "Holmes", "image_url": "//cdn-staging.swiftgift.me/images/users/8c/2baa6eda270623f03c4d8d44bec9d2.jpg", "email": "sherlock@holmes.co.uk", "phone_number": ""}, "message": {"text": "Happy birthday, my dear Watson!", "image_url": "//cdn-staging.swiftgift.me/images/users/a2/7a5bd5a0f9943fc021adae269c316b.jpg"}, "sender_ip": "212.58.244.23", "is_surprise": false, "products": [{"name": "Aberfeldy - Highland Single Malt Scotch (12 Year Old)", "image_url": "//cdn.swiftgift.me/images/products/5a/842ba3d3f2341e6a5a0c49c0735699.jpg"}, {"name": "Mystery Fidget Spinners", "image_url": "https://cdn.swiftgift.me/images/products/0a/9b856f95e0afc3a3fbc16276314b13.jpg"}], "basket_amount": "45.23", "currency": "GBP", "delivery": {"country": "GB", "name": "DHL Standard Delivery", "min_time": 1, "max_time": 2}, "callback_url": "https://mysite.com/orders/123/callback", "reminders": [24, 48]}' \
-  'https://api-staging.swiftgift.me/v1/gifts'
-```
-
-### Get gift (polling model)
+### Get gift
 This can be useful if you don't want to use Callback URL and want to poll changes on your side.
 
-Request: `GET https://api.swiftgift.me/gifts/123`
+Request: `GET https://api.swiftgift.me/v1/gifts/123`
 Response (example: where gift has been accepted):
 ```json
 {
@@ -114,7 +107,7 @@ Response (example: where gift has been accepted):
 }
 ```
 
-### Get gift via callback (pushing model)
+### Get gift via callback
 If you have provided a `callback_url`, every time there is a change to Gift we call your API with updated details.
 
 Request (example: where gift has been viewed, but not yet accepted): `POST https://mysite.com/orders/123/callback`
@@ -140,9 +133,9 @@ Request (example: where gift has been viewed, but not yet accepted): `POST https
 ### Update gift
 This is not a mandatory step, but if you update us when gift has been
 dispatched - we can notify the Recipient via email, and also update the
-Gift Receive Landing Page.
+Gift Receive Landing Page (gift's `share_url` page).
 
-Request: `POST https://api.swiftgift.me/gifts/123`
+Request: `POST https://api.swiftgift.me/v1/gifts/123`
 ```json
 {
   "status": "dispatched",
