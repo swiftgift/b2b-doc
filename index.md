@@ -18,10 +18,10 @@ Root URL of API is https://api.swiftgift.me/ or https://api-staging.swiftgift.me
 
 ### Reference
 
-  * [Authentication](./authentication.md)
-  * [Gifts](./gifts.md)
-  * [Users](./users.md)
-  * [Statistics](./stat.md)
+* [Authentication](./authentication.md)
+* [Gifts](./gifts.md)
+* [Users](./users.md)
+* [Statistics](./stat.md)
 * Clients:
   * [TODO] [Node.js](./clients/nodejs)
   * [TODO] [Python](./clients/nodejs)
