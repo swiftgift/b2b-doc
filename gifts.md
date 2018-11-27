@@ -77,7 +77,8 @@ If Recipient opens or accepts the gift, your API will be called back with change
 This can be useful if you don't want to use Callback URL and want to poll changes on your side.
 
 Request: `GET https://api.swiftgift.me/v1/gifts/123`
-Response (example: where gift has been accepted):
+
+Response (example: gift has been accepted):
 ```json
 {
   "id": 321,
@@ -110,7 +111,9 @@ Response (example: where gift has been accepted):
 ### Get gift via callback
 If you have provided a `callback_url`, every time there is a change to Gift we call your API with updated details.
 
-Request (example: where gift has been viewed, but not yet accepted): `POST https://mysite.com/orders/123/callback`
+Request (example: gift has been viewed, but not yet accepted):
+
+`POST https://mysite.com/orders/123/callback`
 ```json
 {
   "id": 321,
@@ -135,7 +138,9 @@ This is not a mandatory step, but if you update us when gift has been
 dispatched - we can notify the Recipient via email, and also update the
 Gift Receive Landing Page (gift's `share_url` page).
 
-Request: `POST https://api.swiftgift.me/v1/gifts/123`
+Request:
+
+`POST https://api.swiftgift.me/v1/gifts/123`
 ```json
 {
   "status": "dispatched",

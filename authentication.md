@@ -1,4 +1,4 @@
-## Authentication
+## Authentication in SwiftGift API
 
 ### Access token
 
