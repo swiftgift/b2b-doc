@@ -8,7 +8,7 @@ Root URL of API is https://api.swiftgift.me/ or https://api-staging.swiftgift.me
 
 2. Customer makes a purchase.
 
-3. You creates a gift by [request](./gifts.md#create-gift) to SwiftGift API and display to your customer `share_url` from the response.
+3. You creates a gift by [request](./gifts.md#create-gift) to SwiftGift API and display `share_url` from the response to your customer.
 
 4. Customer sends this URL to the recipient.
 
